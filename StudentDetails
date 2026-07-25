@@ -1,0 +1,39 @@
+/* Tutorial 1*/
+import java.util.Scanner;
+public class Studentdetails
+{
+    String Sname;
+    String Sregno;
+    String Sdept;
+    int Syear;
+    String Sclg;
+    public void getdata(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Student Name");
+        Sname = sc.nextLine();
+        System.out.println("Enter Student Register Number");
+        Sregno = sc.nextLine();
+        System.out.println("Enter Student Department");
+        Sdept = sc.nextLine();
+        System.out.println("Enter Student Year of Study");
+        Syear = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter Student College Name");
+        Sclg = sc.nextLine();
+        sc.close();
+    }
+    public void display(){
+        System.out.println("=====================================");
+        System.out.println("Student Name:"+Sname);
+        System.out.println("Student Register Number:"+Sregno);
+        System.out.println("Student Department:"+Sdept);
+        System.out.println("Student Year of Study:"+Syear);
+        System.out.println("Student College:"+Sclg);
+        System.out.println("=====================================");
+    }
+    public static void main(String[] args){
+        Studentdetails obj1 = new Studentdetails();
+        obj1.getdata();
+        obj1.display();
+    }
+}
