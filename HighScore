@@ -1,0 +1,17 @@
+/* Tutorial 5 */
+import java.util.Scanner;
+public class maxScore
+{
+    public static void main(String[] args){
+        int m1,m2,m3;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter score 1");
+        m1 = sc.nextInt();
+        System.out.println("Enter score 2");
+        m2 = sc.nextInt();
+        System.out.println("Enter score 3");
+        m3 = sc.nextInt();
+        int highest = (m1>m2) ? (m1>m3 ? m1:m3) : (m2>m3 ?m2 :m3);
+        System.out.println("The highest score is: " + highest);
+    }
+}
