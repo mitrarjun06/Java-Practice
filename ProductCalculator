@@ -1,0 +1,28 @@
+/* Tutorial 2 */
+import java.util.*;
+public class Cashier
+{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int p1,p2;
+        System.out.println("Enter price of product 1");
+        p1 = sc.nextInt();
+        System.out.println("Enter price of product 2");
+        p2 = sc.nextInt();
+        int sum = p1 + p2;
+        int diff = p1 - p2;
+        int product = p1 * p2;
+        int quotient=0,remainder=0;
+        if (p2==0){
+            System.out.println("One product price is 0");
+        }else{
+            quotient = p1/p2;
+            remainder = p1 % p2;
+        }
+        System.out.println("Total: " + sum);
+        System.out.println("Difference: " + diff);
+        System.out.println("Product: " + product);
+        System.out.println("Quotient: " + quotient);
+        System.out.println("Remainder: " + remainder);
+    }
+}
