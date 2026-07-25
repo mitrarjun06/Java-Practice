@@ -1,0 +1,15 @@
+/* Tutorial 8 */
+import java.util.Scanner;
+public class totalSalary
+{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int salary, allowance;
+        System.out.println("Enter the Basic Salary");
+        salary = sc.nextInt();
+        System.out.println("Enter the Allowance");
+        allowance = sc.nextInt();
+        int grossSalary = salary + allowance;
+        System.out.println("The total salary is: " + grossSalary);
+    }
+}
