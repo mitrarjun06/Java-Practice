@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class highest
+{
+    public static void main(String[] args){
+        int m1, m2;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter marks");
+        m1=sc.nextInt();
+        m2=sc.nextInt();
+        if (m1>m2){
+            System.out.println("Student 1 got more");
+        }else{
+            System.out.println("Student 2 got more");
+        }
+    }
+}
