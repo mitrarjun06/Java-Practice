@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Average
+{
+    public static void main(String[] args){
+        int m1,m2,m3,average;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the marks of 3 subjects");
+        m1=sc.nextInt();
+        m2=sc.nextInt();
+        m3=sc.nextInt();
+        average = (m1+m2+m3)/3;
+        System.out.println("Average mark is: " + average);
+        sc.close();
+    }
+}
