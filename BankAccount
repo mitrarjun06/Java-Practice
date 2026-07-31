@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class BankAccount
+{
+    int accno;
+    String accname;
+    double balance;
+    BankAccount(int a,String n, double b){
+        accno = a;
+        accname = n;
+        balance = b;
+    }
+    
+    void display(){
+        System.out.println("Account Number: " + accno);
+        System.out.println("Account Holder Name: " + accname);
+        System.out.println("Account Balance: " + balance);
+    }
+    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Account Number");
+        int a = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter Account Holder Name");
+        String n = sc.nextLine();
+        System.out.println("Enter Account Balance");
+        double be = sc.nextDouble();
+        BankAccount b = new BankAccount(a,n,be);
+        b.display();
+    }
+}
