@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Volume
+{
+    int length,breadth,height;
+    Volume(int l, int b,int h){
+        length = l;
+        breadth =b;
+        height = h;
+    }
+    
+    int calc(){
+        return length*breadth*height;
+    }
+    
+    void display(){
+        System.out.println("Volume is: " + calc());
+    }
+    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Length");
+        int l =sc.nextInt();
+        System.out.println("Enter Breadth");
+        int b = sc.nextInt();
+        System.out.println("Enter Height");
+        int h = sc.nextInt();
+        Volume v = new Volume(l,b,h);
+        v.display();
+    }
+}
