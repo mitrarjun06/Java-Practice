@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Car
+{
+    String brand;
+    String Model;
+    double price;
+    Car(String b,String M, double p){
+        brand = b;
+        Model = M;
+        price = p;
+    }
+
+    void display(){
+        System.out.println("Car Brand: " + brand);
+        System.out.println("Car Model: " + Model);
+        System.out.println("Car Price: " + price);
+    }
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Car Brand");
+        String b = sc.nextLine();
+        System.out.println("Enter Car Model");
+        String M = sc.nextLine();
+        System.out.println("Enter Car Price");
+        double p = sc.nextDouble();
+        Car c = new Car(b,M,p);
+        c.display();
+    }
+}
