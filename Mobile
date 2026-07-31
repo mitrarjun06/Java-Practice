@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Mobile
+{
+    String brand, model;
+    double price;
+    Mobile(String b, String m, double p){
+        brand = b;
+        model = m;
+        price = p;
+    }
+    
+    void display(){
+        System.out.println("Mobile Brand: " + brand);
+        System.out.println("Mobile Model: " + model);
+        System.out.println("Mobile Price: " + price);
+    }
+    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Mobile Brand");
+        String b = sc.nextLine();
+        System.out.println("Enter Mobile Model");
+        String m = sc.nextLine();
+        System.out.println("Enter Mobile Price");
+        double p = sc.nextDouble();
+        Mobile n = new Mobile(b,m,p);
+        n.display();
+    }
+}
