@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Laptop
+{
+    String brand;
+    int RAM;
+    String pname;
+    Laptop(String b,int R,String p){
+        brand = b;
+        RAM = R;
+        pname = p;
+    }
+    
+    void display(){
+        System.out.println("Laptop Brand: " + brand);
+        System.out.println("Laptop RAM size: " + RAM);
+        System.out.println("Laptop Processor Name: " + pname);
+    }
+    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Laptop Brand");
+        String b = sc.nextLine();
+        System.out.println("Enter Laptop RAM size");
+        int R = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter Laptop Processor Name");
+        String p = sc.nextLine();
+        Laptop l = new Laptop(b,R,p);
+        l.display();
+    }
+}
