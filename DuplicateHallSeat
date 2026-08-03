@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class HallSeat
+{
+    void checkDuplicateSeats(int[] seatNumbers){
+        int size = seatNumbers.length;
+        boolean found= false;
+        for(int i = 0;i<size;i++){
+            for(int j = i+1; j<size-1;j++){
+                if (seatNumbers[i] == seatNumbers[j]){
+                    System.out.println("Duplicate Seat Number Found: " + seatNumbers[i]);
+                    found = true;
+                }
+            }
+        }
+        if(!found){
+            System.out.println("No Duplicate Seats Found");
+        }
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of students");
+        int n;
+        n = sc.nextInt();
+        int ar[] = new int[n];
+        System.out.println("Enter seat numbers");
+        for(int i =0;i<n;i++){
+            ar[i] = sc.nextInt();
+        }
+        HallSeat obj = new HallSeat();
+        obj.checkDuplicateSeats(ar);
+    }
+}
