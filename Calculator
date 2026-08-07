@@ -1,0 +1,28 @@
+
+import java.util.Scanner;
+public class Calculator
+{
+    int sum(int num1, int num2){
+        return num1+num2;
+    }
+
+    int sum(int num1,int num2, int num3){
+        return num1+num2+num3;
+    }
+
+    double sum(double num1,double num2){
+        return num1+num2;
+    }
+
+    public static void main(String[] args){
+        System.out.println("Sum of 3 and 4");
+        Calculator c = new Calculator();
+        System.out.println(c.sum(3,4));
+        System.out.println("Sum of 3,5 and 4");
+        Calculator d = new Calculator();
+        System.out.println(d.sum(3,4,5));
+        System.out.println("Sum of 3.6 and 4.5");
+        Calculator e = new Calculator();
+        System.out.println(e.sum(3.6,4.5));
+    }
+}
