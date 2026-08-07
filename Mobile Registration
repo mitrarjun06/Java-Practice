@@ -1,0 +1,41 @@
+
+import java.util.Scanner;
+public class MobileR
+{
+    String brand;
+    double price;
+    Scanner sc = new Scanner(System.in);
+    MobileR(){
+        System.out.println("Enter Brand Name");
+        brand = sc.nextLine();
+        System.out.println("Enter Price");
+        price = sc.nextDouble();
+    }
+    MobileR(String b){
+        brand = b;
+        System.out.println("Enter Price");
+        price = sc.nextDouble();
+    }
+    MobileR(String b, double p){
+        brand = b;
+        price = p;
+    }
+    void display(){
+        System.out.println("Mobile Details");
+        System.out.println("Brand Name: " + brand);
+        System.out.println("Price: " + price);
+    }
+    public static void main(String[] args){
+        MobileR R = new MobileR();
+        System.out.println(" ");
+        R.display();
+        System.out.println(" ");
+        MobileR S = new MobileR("Samsung");
+        System.out.println(" ");
+        S.display();
+        System.out.println(" ");
+        MobileR T = new MobileR("Apple",460000.75);
+        System.out.println(" ");
+        T.display();
+    }
+}
