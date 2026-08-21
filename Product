@@ -1,0 +1,62 @@
+abstract class Product {
+    int id;
+    String name;
+    double price;
+
+    Product(int i, String n, double p) {
+        id = i;
+        name = n;
+        price = p;
+    }
+
+    abstract double calculateDiscount();
+
+    void displayFinalPrice() {
+        double finalPrice = price - calculateDiscount();
+        System.out.println(name + " - Original Price: " + price + ", Final Price: " + finalPrice);
+    }
+}
+
+class Electronics extends Product {
+    Electronics(int i, String n, double p) {
+        super(i, n, p);
+    }
+
+    double calculateDiscount() {
+        return price * 0.10;
+    }
+}
+
+class Clothing extends Product {
+    Clothing(int i, String n, double p) {
+        super(i, n, p);
+    }
+
+    double calculateDiscount() {
+        return price * 0.20;
+    }
+}
+
+class Books extends Product {
+    Books(int i, String n, double p) {
+        super(i, n, p);
+    }
+
+    double calculateDiscount() {
+        return price * 0.05;
+    }
+}
+
+public class Product1 {
+    public static void main(String[] args) {
+        Product[] products = {
+            new Electronics(1, "Laptop", 1000.0),
+            new Clothing(2, "Jacket", 100.0),
+            new Books(3, "Java Guide", 50.0)
+        };
+
+        for (Product p : products) {
+            p.displayFinalPrice();
+        }
+    }
+}
