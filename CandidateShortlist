@@ -1,0 +1,82 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+class Candidate {
+    int candidate_Id;
+    String name;
+    int aptitude;
+    int technical;
+    int communication;
+
+    public Candidate(int c, String n, int a, int t, int co) {
+        candidate_Id = c;
+        name = n;
+        aptitude = a;
+        technical = t;
+        communication = co;
+    }
+
+    public int getTotalScore() {
+        return aptitude + technical + communication;
+    }
+}
+
+public class Candidate1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter total number of candidates (N): ");
+        int N = sc.nextInt();
+        System.out.print("Enter number of candidates to shortlist (K): ");
+        int K = sc.nextInt();
+
+        Candidate[] candidates = new Candidate[N];
+
+        System.out.println("\nEnter candidate details (ID, Name, Aptitude, Technical, Communication):");
+        for (int j = 0; j < N; j++) {
+            System.out.println("\n--- Candidate " + (j + 1) + " ---");
+            System.out.print("Enter Candidate ID: ");
+            int i = sc.nextInt();
+            System.out.print("Enter Name: ");
+            String n = sc.next();
+            System.out.print("Enter Aptitude Score: ");
+            int a = sc.nextInt();
+            System.out.print("Enter Technical Score: ");
+            int t = sc.nextInt();
+            System.out.print("Enter Communication Score: ");
+            int co = sc.nextInt();
+
+            candidates[j] = new Candidate(i, n, a, t, co);
+        }
+
+        for (int i = 0; i < N - 1; i++) {
+            for (int j = 0; j < N - 1 - i; j++) {
+                int score1 = candidates[j].getTotalScore();
+                int score2 = candidates[j + 1].getTotalScore();
+
+                boolean swap = false;
+
+                if (score1 < score2) {
+                    swap = true;
+                } 
+                else if (score1 == score2) {
+                    if (candidates[j].candidate_Id > candidates[j + 1].candidate_Id) {
+                        swap = true;
+                    }
+                }
+
+                if (swap) {
+                    Candidate temp = candidates[j];
+                    candidates[j] = candidates[j + 1];
+                    candidates[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println("\n=== TOP " + K + " SHORTLISTED CANDIDATES ===");
+        for (int i = 0; i < K && i < N; i++) {
+            System.out.println(candidates[i].candidate_Id + " " + candidates[i].name + " " + candidates[i].getTotalScore());
+        }
+
+        sc.close();
+    }
+}
