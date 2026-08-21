@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class Shape1 {
+
+    abstract static class Shape {
+        abstract double calculateArea();
+    }
+
+    static class Circle extends Shape {
+        double radius;
+
+        Circle(double r) {
+            radius = r;
+        }
+
+        double calculateArea() {
+            return Math.PI * radius * radius;
+        }
+    }
+
+    static class Rectangle extends Shape {
+        double length, width;
+
+        Rectangle(double l, double w) {
+            length = l;
+            width = w;
+        }
+
+        double calculateArea() {
+            return length * width;
+        }
+    }
+
+    static class Triangle extends Shape {
+        double base, height;
+
+        Triangle(double b, double h) {
+            base = b;
+            height = h;
+        }
+
+        double calculateArea() {
+            return 0.5 * base * height;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter radius for Circle: ");
+        double r = sc.nextDouble();
+        Shape circle = new Circle(r);
+
+        System.out.print("Enter length for Rectangle: ");
+        double l = sc.nextDouble();
+        System.out.print("Enter width for Rectangle: ");
+        double w = sc.nextDouble();
+        Shape rectangle = new Rectangle(l, w);
+
+        System.out.print("Enter base for Triangle: ");
+        double b = sc.nextDouble();
+        System.out.print("Enter height for Triangle: ");
+        double h = sc.nextDouble();
+        Shape triangle = new Triangle(b, h);
+
+        System.out.println("\n--- Area Calculations ---");
+        System.out.printf("Circle Area: %.2f\n", circle.calculateArea());
+        System.out.printf("Rectangle Area: %.2f\n", rectangle.calculateArea());
+        System.out.printf("Triangle Area: %.2f\n", triangle.calculateArea());
+
+        sc.close();
+    }
+}
